@@ -1,0 +1,40 @@
+@import 'tailwindcss';
+
+:root {
+  /* Measured to match AppChrome header + subnav */
+  --chrome-header-height: 4.75rem;
+  --chrome-subnav-height: 2.75rem;
+  --layout-sticky-top: calc(
+    var(--chrome-header-height) + var(--chrome-subnav-height)
+  );
+}
+
+/* xl+: sidebar replaces horizontal subnav */
+@media (min-width: 1280px) {
+  :root {
+    --chrome-header-height: 5rem;
+    --layout-sticky-top: var(--chrome-header-height);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family:
+    'Inter',
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
